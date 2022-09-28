@@ -1,0 +1,350 @@
+
+Problem 1: Sort an array
+    •You are given an Array with 10 positive, unique, integers. Sort the array indexing from lowest to highest. 
+
+    We will compare integers until the lowest integer is found, starting with index 0. When we iterate the array and have the the lowest integer we will add it to Array B and make it negative Array A to prevent it from being selected again. 
+
+    A=    [10, 20, 38, 4, 15, 55, 1, 33, 45, 50]
+    Index= 0    1   2  3  4   5   6   7  8   9 
+
+    A=    [-10, -20, -38, -4, -15, -55, -1, -33, -45, -50]
+    Index=  0    1    2    3   4    5    6   7    8    9 
+
+    B=[1, 4, 10, 15, 20, 33, 38, 45, 55]
+
+    lowestNum  =  1
+    lowestIndex=  6
+
+    compare index 0 to index 1 to find lowestNum. 
+    10 is lower then 20, Set lowestNum 10
+    compare index 0 to index 2, index 0 is lower, lowestSum = 10
+    compare index 0 to index 3, index 3 is lower, lowestSum = 4
+    Start at lowestSum and continue to compare.
+    compare index 3 to index 4, index 3 is lower, lowestSum = 4
+    compare index 3 to index 5, index 3 is lower, lowestSum = 4
+    compare index 3 to index 6, index 6 is lower, lowestSum = 1
+    compare index 6 to index 7, index 6 is lower, lowestSum = 1
+    compare index 6 to index 7, index 6 is lower, lowestSum = 1
+    compare index 6 to index 8, index 6 is lower, lowestSum = 1
+    compare index 6 to index 9, index 6 is lower, lowestSum = 1
+    
+    Index 6 is lowestNum, turn 1 into -1 in A[], add it to index 0 of Array B.  
+
+    Repeat
+
+    Problem 1A:
+
+    
+
+    loop index from 0 to 9
+
+        lowestNum = A[0]   /* find first positive value in array A */  /* lowestNum = MAXINT; lowestIndex = MAXINT */
+        lowestIndex = 0
+
+        loop currentIndex from 1 to 9 /* if using MAXINT, start loop from 0 to 9 */
+        if A[currentIndex] > 0 then    
+            compare lowestNum is more than A[currentIndex]
+                if true then 
+                    lowestNum = A[currentIndex]
+                    lowestIndex = currentIndex
+        endloop
+
+        B[index] = lowestNum
+        A[lowestIndex] = -A[lowestIndex]
+
+    endloop
+
+
+
+    index     currentIndex    lowestNum   lowestIndex                   A                                       B
+        0              1            10          0               [10, 20, 38, 4, 15, 55, 1, 33, 45, 50]  
+        0              2
+        0              3              4          3              
+        0              4
+        0              5
+        0              6              1          6
+        0              7
+        0              8
+        0              9              1          6              [10, 20, 38, 4, 15, 55, -1, 33, 45, 50]          [1. ]
+                
+        1              1              10         0
+        1              2              
+        1              3              4          3
+        1              4
+        1              5
+        1              6
+        1              7
+        1              8
+        1              9             4           3              [10, 20, 38, -4, 15, 55, -1, 33, 45, 50]          [1, 4, ]
+
+        2              1             10          0
+        2              2             
+        2              3                                                 
+        2              4                                                 
+        2              5                                                 
+        2              6                                              
+        2              7                                                 
+        2              8                                                 
+        2              9                                      [-10, 20, 38, -4, 15, 55, -1, 33, 45, 50]          [1, 4, 10, ]   
+
+        3              1             20          1
+        3              2
+        3              3
+        3              4             15          4 
+        3              5..8
+        3              9                                       [-10, 20, 38, -4, -15, 55, -1, 33, 45, 50]          [1, 4, 10, 15, ] 
+
+        4              1             20          1
+        4              2..8          
+        4              9                                        [-10, -20, 38, -4, -15, 55, -1, 33, 45, 50]          [1, 4, 10, 15, 20 ]
+
+        5              2             38          2
+        5              3..6
+        5              7             33          7
+        5              8        
+        5              9                                         [-10, -20, 38, -4, -15, 55, -1, -33, 45, 50]          [1, 4, 10, 15, 20, 33 ]
+
+        6              2             38          2
+        6              3..8
+        6              9                                         [-10, -20, -38, -4, -15, 55, -1, -33, 45, 50]          [1, 4, 10, 15, 20, 33, 38 ]
+
+        7              5             55          5
+        7              6..7
+        7              8             45          8
+        7              9                                         [-10, -20, -38, -4, -15, 55, -1, -33, -45, 50]          [1, 4, 10, 15, 20, 33, 38, 45 ]
+
+        8              5             55         5
+        8              6..8         
+        8              9             50         9                [-10, -20, -38, -4, -15, 55, -1, -33, -45, -50]          [1, 4, 10, 15, 20, 33, 38, 45, 50 ]
+
+        9              5             55         5
+        9              6..8
+        9              9                                         [-10, -20, -38, -4, -15, -55, -1, -33, -45, -50]          [1, 4, 10, 15, 20, 33, 38, 45, 50, 55 ]
+
+        endloop
+
+    A=    [10, 20, 38, 4, 15, 55, 1, 33, 45, 50]
+    Index=   0   1   2  3   4   5  6  7    8  9 
+
+
+Problem 2: Sort an array reversed
+    •You are given an array of positive, unique integers. Sort the array indexing largest to smallest
+
+    A=      [25, 47, 86, 22, 56, 99, 20, 52, 31, 88]
+    Index=    0  1   2   3   4   5   6   7   8   9
+    A= [-25, -47, -86, -22, -56, -99, -20, -52, -31, -88]
+    B= [99, 88, 86, 56, 52, 47, 31, 25, 22, 20]
+
+    largestNum = 99
+    Index= 5
+
+    We will iterate through the array to find the largestNum starting at index=0. After iterating through the entire array we will change the largestNum in A[] to a negative integer so that it won't be selected again in and we will apply it to B[].
+
+    First we will compare index 0 to index 1 to find the higher integer, Index 1 is higher than index 0, largestNum = 47
+
+    compare index 1 to index 2, index 2 is higher than index 1, largestNum = 86
+    compare index 2 to index 3, index 2 is higher than index 3, largestNum = 86
+    compare index 2 to index 4, index 2 is higher than index 4, largestNum = 86
+    compare index 2 to index 5, index 5 is higher than index 2, largestNum = 99
+    compare index 5 to index 6, index 5 is higher than index 6, largestNum = 99
+    compare index 5 to index 7, index 5 is higher than index 7, largestNum = 99
+    compare index 5 to index 8, index 5 is higher than index 8, largestNum = 99
+    compare index 5 to index 9, index 5 is higher than index 9, largestNum = 99
+
+    Apply index 5 from A[] to index 0 of B[], make index 5 in A[] negative.
+    repeat.  
+
+
+Problem 3: Sort an array  without creating another array
+    •You are given an array of positive, unique integers. Sort the array indexing smallest to largest without creating a second array. 
+
+
+    A=      [5, 10, 543, 8548, 3, 288, 18, 8, 44, 56]
+    index=  0   1   2     3    4   5    6  7   8  9 
+
+    loop index from 0 - 9 
+                                                                                                   0       1       2        3     4      5     6     7   8      9
+        lowestNum = A[index]                                                                         ( 3 )  ( 10 )  ( 543 )  (8548)  (5 )  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (0-9)
+        lowestIndex = index                                                                                ( 5 )  ( 543 )  (8548)   (10 )  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (1-9)
+                                                                                                               ( 10 )  ( 543 )  (8548)  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (2-9)
+        loop currentIndex from index+1 - 9         /*QUIESTION: why isn't it loop currentIndex from currentIndex+1-9?*/                                                           
+           compare lowestNum is more than A[currentIndex]
+                if true then 
+                    lowestNum = A[currentIndex]
+                    lowestIndex = currentIndex
+        endloop
+
+        swap A[lowestIndex],  A[index] 
+         
+        
+
+    endloop
+
+index     currentIndex    lowestNum   lowestIndex                   A 
+0           1               5           0                [5, 10, 543, 8548, 3, 288, 18, 8, 44, 56]
+0           2..3 
+0           4               3           4
+0           5..8        
+0           9                                            [3, 10, 543, 8548, 5, 288, 18, 8, 44, 56]  
+
+1           1               5           0
+1           
+
+
+line    index     currentIndex    lowestNum   lowestIndex       compare@171             A 
+165        0
+167        0                         5           
+168                                               0
+170        0           1
+171                                                                 false
+170        0            2
+171        0            2                                           false
+170        0            3                                           
+171        0            3                                           false
+170        0            4           
+171        0            4                                           true
+173        0            4             3                
+174        0            4                         4
+170        0            5             
+171        0            5                                           false
+170        0            6
+171        0            6                                           false
+170        0            7..8
+170        0            9           
+171        0            9                                           false
+177                                                                         [3, 10, 543, 8548, 5, 288, 18, 8, 44, 56]
+165        1            
+167        1                        10
+168        1                                       1                            /* Stopped Tues Sep 27
+170        1            2                                                                    /* Started Wed Sep 28
+171                                                                 false
+170        1            3
+171                                                                 false
+170        1            4
+171                                                                 true
+173        1            4           5
+174        1            4                           4       
+170        1            5
+171        1            5                                           false
+170        1            6..8
+170        1            9
+171        1            9                                           false
+177                                                                         [3, 5, 543, 8548, 10, 288, 18, 8, 44, 56]    
+165        2            
+167        2                        543
+168        2                                        2
+170        2            3
+171        2            3                                           false
+170        2            4       
+171                                                                 true
+173                                 10
+174                                                 4
+170        2            5
+171                                                                 false
+170        2            6
+171                                                                 false
+170        2            7
+171                                                                 true
+173                                 8
+174                                                 7
+170        2            8   
+171                                                                 false
+170        2            9
+171                                                                 false
+177                                                                         [3, 5, 8, 8548, 10, 288, 18, 543, 44, 56]
+165        3            
+167                                  8548
+168                                                 3
+170        3            4
+171                                                                 true
+173                                   10
+174                                                 4
+170        3            5       
+171                                                                 false
+170        3            6..8
+171                                                                 false
+170        3            9
+171                                                                 false
+177                                                                         [3, 5, 8, 10, 8548, 288, 18, 543, 44, 56] 
+165        4
+167                                 8548
+168                                                 4          
+170        4            5
+171                                                                 true
+173                                 288
+174                                                 5
+170        4            6           
+171                                                                 true
+173                                  18
+174                                                 6
+170        4            7..8
+170        4            9
+171                                                                 false
+177                                                                         [3, 5, 8, 10, 18, 288, 8548, 543, 44, 56]
+165        5
+167                                 288
+168                                                 5
+170        5            6
+171                                                                 false
+170        5            7
+171                                                                 false
+170        5            8
+171                                                                 true
+173                                 44
+174                                                 8
+177                                                                         [3, 5, 8, 10, 18, 44, 8548, 543, 288, 56]
+165        6
+167                                 8548
+168                                                 6
+170        6            7
+171                                                                 true
+173                                 543
+174                                                 7
+170        6            8
+171                                                                 true
+173                                 288
+174                                                 8
+170        6            9
+171                                                                 true
+173                                  56
+174                                                 9
+177                                                                         [3, 5, 8, 10, 18, 44, 56, 543, 288, 8548]
+165        7
+167                                  543
+168                                                 7
+170        7            8
+171                                                                 true
+173                                 288
+174                                                 8
+170        7            9
+171                                                                 false
+177                                                                         [3, 5, 8, 10, 18, 44, 56, 288, 543, 8548]
+165        8
+167                                 543
+168                                                 8
+170        8            9
+171                                                                 false
+177                                                                         [3, 5, 8, 10, 18, 44, 56, 288, 543, 8548]
+
+
+
+
+
+A=      [5, 10, 543, 8548, 3, 288, 18, 8, 44, 56]
+index=   0   1   2     3   4   5    6  7   8  9 
+
+   
+
+
+    After iteration: A= [8548, 543, 288, 56, 44, 18, 10, 8, 5, 3]
+
+    After swap A= []
+
+    To begin we will compare integers at index 0 sequentially with each other integers from index 1 to index 9 to find largestNum. If an integer is greater than the integer at index 0 we will swap it with the integer at index 0. 
+
+    Once we have concluded that index 0 = largestNum of the off the array we will proceed to do the same sequence starting at the integer at index 1. 
+    
+    compare index 0 to index 1, index 1 is larger than index 0, swap index 0 and index 1
+    compare index 0 to index 2
+
+ 
