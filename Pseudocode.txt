@@ -167,7 +167,7 @@ Problem 3: Sort an array  without creating another array
         lowestNum = A[index]                                                                         ( 3 )  ( 10 )  ( 543 )  (8548)  (5 )  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (0-9)
         lowestIndex = index                                                                                ( 5 )  ( 543 )  (8548)   (10 )  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (1-9)
                                                                                                                ( 10 )  ( 543 )  (8548)  (288)  (18)  (8) (44)  (56)      find smallest number in the array indices (2-9)
-        loop currentIndex from index+1 - 9         /*QUIESTION: why isn't it loop currentIndex from currentIndex+1-9?*/                                                           
+        loop currentIndex from index+1 - 9         /*QUIESTION: why isn't it loop currentIndex from currentIndex0-9?*/                                                           
            compare lowestNum is more than A[currentIndex]
                 if true then 
                     lowestNum = A[currentIndex]
@@ -350,26 +350,88 @@ Problem 3: Sort an array  without creating another array
         compare index 0 to index 2
 
  
-Problem 4. Two Sum
+Problem 4. Two Number
     
     Given an array of integers NUM and an integer TAR, return indices of the two numbers such that they add up to TAR.
 
     You may assume that the array would have exactly one solution, and you may not use the same array element twice.
 
+    written in a for loop:
+
+    let nums = [1, 4, 8, 3, 7, 12] target = 11
+
+
+    /////// JavaScript  ////////
+    nums = []
+    nums [1]
+
+        function twoNumber(nums, target) {
+
+            for (let i = 0; i < nums.length; i++) {                      
+                for (let j = i + 1; j < nums.length; j++) {              
+                    if (nums[i] + nums[j] === target) {
+                        return [i, j]; 
+                    }
+                }
+            }
+        }
+        
+    ////////////////////////////
+
+
+    function twoNumber(nums, target) {
+
+        for (let i = 0; i < nums.length; i++) {                      N(N-1)(N-2) = N^3-N  N=100   N^2=10,000,  N^3=1,000,000
+            for (let j = i + 1; j < nums.length; j++) {              N-1
+                console,log("i=",i," j=", j);
+                if (nums[i] + nums[j] === target) {
+                    return [i, j]; 
+                    console.log("found [", i,", "j", j, "]");
+                }
+            }
+        }
+    }
+    
+
+    i=0  j=0
+
+    i=2 j=3
+     found [2,3]
+     
+
+    Computational Complexity  aka O-notation
+
+    O(1)- constant time
+    O(lgN) - logarithmic time(N)   - linear time
+    O(NlgN) - ??
+    O(N^2) - quadratic time
+    O(N^3) - cubic time
+    O(N^c) - polymonial time
+    O(2^N) - exponential time
+
+
     Example 1:
-        Input: nums = [2,7,11,15], target = 9
+        Input: nums = [2,11,7,15], target = 9
         Output: [0,1]
         Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]
 
+
+        for (i = nums; nums  tars; i)
+
+
+            index = 0   |   firstNum = nums[0] ; firstNum = 2; 
+                secondNum = 11;  secondNumIndex = 1; secondNum = nums[1]
+
+    firstNum[i]
                                                 loop index 0-5
                                                 
-                                                firstNum = nums[index]
-                                                secondNum = index
+                                                    firstNum = nums[index]
 
-                                                loop currentIndex from index + 1 - 5
-                                                    compare firstNum + secondNum = target
-                                                        if true then 
-                                                        output [firstNum[index], secondNum[index]]
+                                                    loop currentIndex from index + 1 - 5
+                                                        secondNum = nums[currentIndex]
+                                                        compare firstNum + secondNum = target
+                                                            if true then 
+                                                                output [firstNum[index], secondNum[currentIndex]]
 
 
                                             index     currentIndex      firstNum    secondNum       target
@@ -377,7 +439,11 @@ Problem 4. Two Sum
                                             0           1               7           7               true
                                                                                                 output: [0, 1]
 
-                                            
+
+    constants - 0, 1, 4.0, 3.14, -15, 'a', "Tim"
+    variable - not a constant 
+    type - integer, boolean, string, arrays[type], list[type]
+    array of integers, arrays of strings, arrays of arrays[type]
 
     Example 2:
         Input: nums = [3,2,4], target = 6
@@ -446,30 +512,9 @@ Problem 4. Two Sum
                                                 0          1                   35        -11            false
                                                 0          2                   35        -23            true
                                                                                                             output: [0, 2]
-    
-                              
-                
-                                
+                               
 
-        
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Problem 5. 2. Merge Two Sorted Arrays
+Problem 5.  Merge Two Sorted Arrays 
 
     You are given two sorted arrays array1 and array2.
         Each array contains integers.
@@ -489,13 +534,93 @@ Problem 5. 2. Merge Two Sorted Arrays
         Output: [-10,-2,-1,0,3,4,4]
 
     Pseudocode / Table
+    • loop through each array comparing array1 and array2's index and print lowest and equal to lowest int into a new array 
+                        My thinking: 
+
+                        loop through arr1
+                        loop through arr2
+
+                        mergedArr=[]
+
+                        loop through arr1 
+                        loop through arr2
+                        if arr1[0] < arr2[0]
+                            is true
+
+                            print mergedArr[0] arr1++
+                            else if
+                            array1[0] == array2[0]
+                            print mergedArr[arr1[0], arr2[0], ]
+
+    
+
+        Edge Cases:
+        1. one or both arrays are empty
+        2. array sizes are different - what happens when you finish one array and there is stuff left in the other
+        
+       
+        function mergeArrays
+
+            mergedArr[];
+            
+            if Arr1.size() == 0 && Arr2.size() == 0
+                return mergedArr
+                
+            if Arr1.size() == 0
+                for index2 from 0 to Arr2.size()-1      for index2 from arr2.start() to arr2.end()
+                    mergedArr[index2] = arr2[index2]
+                return mergedArr
+
+            if Arr2.size() == 0 
+                for index1 from 0 to Arr1.size()-1 
+                    mergedArr[index1] = arr1[index1]
+                return mergedArr
+
+            doneEnd = false
+            index1 = 0
+            index2 = 0
+            mergedIndex = 0
+
+            while loop (doneEnd == false)
+            
+                if index1 >= arr1.size()-1
+                    mergedArr[mergeIndex]  = arr2[index2]
+                    index2++ ; mergeIndex++
+                else if index2 >= arr2.size()-1
+                    mergedArr[mergeIndex]  = arr1[index1]
+                    index1++ ; mergeIndex++
+                else if Arr1[index1] < Arr2[index2]
+                    mergedArr[mergeIndex]  = arr1[index1]
+                    index1++ ; mergeIndex++
+                else if Arr1[index1] > Arr2[index2]
+                    mergedArr[mergeIndex]  = arr2[index2]
+                    index2++ ; mergeIndex++
+                else 
+                    mergedArr[mergeIndex]  = arr1[index1]
+                    mergeIndex++
+                    mergedArr[mergeIndex]  = arr2[index2]
+                    index1++ ; index2++ ; mergeIndex++ 
+                    
+                doneArr1 = (index1 == arr1.size()-1) 
+                doneArr2 = (index2 == arr2.size()-1) 
+                doneEnd  = doneArr1 && doneArr2 
+                                    
+           
+           
+            lowestNum = array1[index]
+            currentIndex = index
+
+            ///JavaScript///
+            
+            function mergeTwoArr(Arr1, Arr2)
+
+                
 
 
 
-
-    
-    
-    
-    
-    */ Work on problem 1 or problem 2 in JavaScript */ 
-    https://www.freecodecamp.org/news/javascript-for-loops/
+            
+            
+            
+            
+            */ Work on problem 1 or problem 2 in JavaScript */ 
+            https://www.freecodecamp.org/news/javascript-for-loops/
