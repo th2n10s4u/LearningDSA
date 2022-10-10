@@ -611,20 +611,66 @@ Problem 5.  Merge Two Sorted Arrays
             currentIndex = index
 
             ///JavaScript///
-            /* attempt 1: 
-            function mergeTwoArr(arr1, arr2)
-                for (let i = 0; i < Arr1.length; i++) {
-                    for (let j = 0; i < arr2.length; j++) {
-                        if (arr1[i] < arr2[i]) {
-                           return newArr[] 
-                         else {
-                            if (arr1[i] > arr2[j]) {
-                                return newArr[j] 
-                            }
-                        }
-            wrong because we should have a while loop */ 
+            
+            Line by line:
+
+            mergedArr = []
+            //Edge Case: both arrays are empty
+            //unsure if mergedArr will print properly
+            if (arr1.length() == 0 && arr2.length() == 0) {
+                return mergedArr
+            }
+            //Edge Case: arr1 is shorter or less than arr2
+            //unsure if mergedArr will return the remaining elements in arr2
+            if arr1.length() == 0 {
+                for (let j=0; j < arr2.length; j++) {
+                    return mergedArr[...arr2];
+                }
+            }
+
+            //Edge Case: arr2 is shorter or less than arr1 
+            //Unsure if mergedArr will return the remaining elements in arr1
+            if arr2.length() == 0 {
+                for (let i=0; i < arr2.length; i++) {
+                    return mergedArr[...arr1];
+                }
+            }
+
+            doneEnd = !true
+            i = 0 
+            j = 0 
+            k = 0
+
+            while (doneEnd = !true) {
+                for (let i = 0; i >= arr1.length()-1) {
+                    return mergedArr[k] = arr2[j]
+                }
+            }
+
+
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            while (i < arr2.length && j < arr1.length){
+                if (arr[])
+            }
 
             function mergeTwoArr(arr1, arr2) {
+                while (arr1.length < arr2.length)
+                    for (i = 0; i < arr1.length; i++)
+
+
                 
             }
 
