@@ -1,0 +1,43 @@
+// Basic Guidelines & Conventions - this enables improved readability of the code
+
+// 1. Use semi-colons to terminate statements
+// 2. Use // to comment lines of code; 
+//    the multi-line /*comment*/ may cause problems as code grows & ages over time
+//    you cannot nest multi-line comments; following is illegal: /* comment1 /* comment2 */ comment3 */
+//    you can next // comments // like // this
+// 3. Declarations 
+//    a. always declare your variables using let or const
+//          if a variable is constant - use the const declaration; const means 
+//          that you cannot assign that variable to another value
+//          For example: 
+//             const arr1 = [1, 3, 5];
+//             arr1.push(7);   // is legal - we changed the contents of arr1, but not arr1 itself;
+//                                 arr1 still points to the same memory location as before
+//             arr1 = [2, 4, 6]; // is ILLEGAL - we changed arr1; arr1 no longer points to the same
+//                                  memory location as before
+//    b. declare your variables in the most local scope as possible and before its first use
+//             For example: where should you declare 'done', 'a', 'b', 'i'?
+//               function test() {
+//                  while (!done) {
+//                     foo = a;
+//                     if (!foo) {
+//                        b = true;
+//                        for (i=0; i<2; i++) {
+//                           a[i] = b;
+//                           b = !b;
+//                     }
+//                     done = b & a;
+//                  }
+//                }
+//    c. Naming convention
+//       o. use CamelBack notation - mix of upper and lower case letters, usually stating with lower case
+//          Although legal, you should not use underscore as separator
+//       o. variable names should mean something when you read them
+//       o. similar or aligned variable should be named similarly to make you aware that they are aligned
+//          For example: arr1 & arr1Idx - indicates that there may be a relationship between these variables
+//    d. Naming convention for boolean - usually a verb-noun that when read should have a meaning with true or false
+//       For example: isSomething, hasSomething, doSomething, etc.
+//    e. Declare types 
+//       although Javascript can automatically determine types and do automatic type conversions with many operators,
+//       a major purpose of the type declaration is to help the human understand the code
+
