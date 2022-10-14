@@ -7,7 +7,14 @@
 //    you can next // comments // like // this
 // 3. Declarations 
 //    a. always declare your variables using let or const
-//          if a variable is constant - use the const declaration; const means 
+//          if a variable is con
+//                  while (!done) {
+//                     foo = a;
+//                     if (!foo) {
+//                        b = true;
+//                        for (i=0; i<2; i++) {
+//                           a[i] = b;
+//                           b = !b;stant - use the const declaration; const means 
 //          that you cannot assign that variable to another value
 //          For example: 
 //             const arr1 = [1, 3, 5];
@@ -18,13 +25,6 @@
 //    b. declare your variables in the most local scope as possible and before its first use
 //             For example: where should you declare 'done', 'a', 'b', 'i'?
 //               function test() {
-//                  while (!done) {
-//                     foo = a;
-//                     if (!foo) {
-//                        b = true;
-//                        for (i=0; i<2; i++) {
-//                           a[i] = b;
-//                           b = !b;
 //                     }
 //                     done = b & a;
 //                  }

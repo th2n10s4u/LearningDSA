@@ -2,7 +2,7 @@ export function mergeTwoArr(arr1, arr2) {
   var mergedArr = [];
 
   //Edge Case: both arrays are empty
-  if (arr1.length == 0 && arr2.length() == 0) {
+  if (arr1.length == 0 && arr2.length == 0) {
     return mergedArr;
   }
   console.log(arr1);
@@ -65,53 +65,56 @@ export function arrAssignments() {
   let arrEmpty = [];
   let mergeArr = mergeTwoArr(arr1, arr2);
   console.log(mergeArr);
-  let sortedArr3 = arrSort(arr3, false);
-  let sortedArr4 = arrSort(arr4);
-  console.log(`sortedArr3=${sortedArr3}`);
-  console.log(`sortedArr4=${sortedArr4}`);
-  let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
+  arrSort(arr3, false);
+  arrSort(arr4, true);
+  console.log(`sortedArr3=${arr3}`);
+  console.log(`sortedArr4=${arr4}`);
+  twoNumber(arr2, 88);
+  console.log(`twoNumber=${twoNumber(arr2, 923)}`);
+  // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
+}
 
-  // let arr3 = arr2;
-  // let arr4 = [...arr2];
-  // console.log(arr2);
-  // console.log("this is arr3:", arr3);
-  // arr2.push(10000);
-  // console.log(arr2);
-  // console.log("this is arr3 after push:", arr3);
-  // console.log(arr4);
+function swap(arr, i, j) {
+  let tmp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = tmp;
+}
 
-  // let a = 1;
-  // let b = a;
-  // console.log(`a = ${a}, b = ${b}`);
-  // a = 2;
-  // console.log(`a = ${a}, b = ${b}`);
+// passed by value(JS) & passed by reference
+export function arrAscendingSort(arr) {
+  for (let i = 1; i < arr.length; i++)
+    for (let j = 0; j < i; j++)
+      if (arr[i] < arr[j]) {
+        swap(arr, i, j);
+      }
+}
+export function arrReverseSort(arr) {
+  for (let i = 1; i < arr.length; i++)
+    for (let j = 0; j < i; j++)
+      if (arr[i] > arr[j]) {
+        swap(arr, i, j);
+      }
 }
 
 export function arrSort(arr1, doReverse) {
-  // for loop
-  for (let i = 1; i < arr1.length; i++)
-    for (let j = 0; j < i; j++)
-      if (arr1[i] < arr1[j]) {
-        let arr1Sort = arr1[i];
-        arr1[i] = arr1[j];
-        arr1[j] = arr1Sort;
-      }
-
+  let arr1sort;
   if (doReverse) {
     arr1sort = arrReverseSort(arr1);
-  } else if (arr1[i] < arr1[j]) {
-    let arr1Sort = arr1[i];
-    arr1[i] = arr1[j];
-    arr1[j] = arr1Sort;
-  }
-  {
+  } else {
     arr1sort = arrAscendingSort(arr1);
   }
-
-  return arr1Sort;
+  return arr1sort;
 }
 
-//A
+export function twoNumber(arr, target) {
+  for (let i = 0; i < arr.length; i++)
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        return [i, j];
+      }
+    }
+}
+
 // //// TwoNumber ////
 // export function twoNumber(nums, target) {
 //   for (let i = 0; i < nums.length; i++) {
