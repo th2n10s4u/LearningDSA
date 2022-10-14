@@ -69,8 +69,11 @@ export function arrAssignments() {
   arrSort(arr4, true);
   console.log(`sortedArr3=${arr3}`);
   console.log(`sortedArr4=${arr4}`);
-  twoNumber(arr2, 88);
-  console.log(`twoNumber=${twoNumber(arr2, 923)}`);
+  // twoNumber(arr2, 88);
+  // console.log(`twoNumber of (arr2)=${twoNumber(arr2, 923)}`);
+  let nums = arr2;
+  console.log("let nums = arr2");
+  console.log(`twoNumber of arr2 - ${twoNumber(nums, 923)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
 }
 
@@ -106,10 +109,10 @@ export function arrSort(arr1, doReverse) {
   return arr1sort;
 }
 
-export function twoNumber(arr, target) {
-  for (let i = 0; i < arr.length; i++)
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] + arr[j] === target) {
+export function twoNumber(nums, target) {
+  for (let i = 0; i < nums.length; i++)
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
         return [i, j];
       }
     }
