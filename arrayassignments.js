@@ -73,7 +73,8 @@ export function arrAssignments() {
 
   let nums = arr0;
   console.log("let nums = arr2");
-  console.log(`twoNumber of arr2 - ${twoNumber(nums, 5)}`);
+  console.log(`twoNumber of arr2 = ${twoNumber(nums, 50)}`);
+  console.log(`threeNumber of arr0 = ${threeNumber(nums, 10)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
 }
 
@@ -111,7 +112,8 @@ export function arrSort(arr1, doReverse) {
 
 export function twoNumber(nums, target) {
   if (nums.length === 0) {
-    return "There are no integers to add";
+    // return "There are no integers to add"; //functions should return items of one type.
+    return "[]";
   }
   {
     for (let i = 0; i < nums.length; i++)
@@ -121,7 +123,8 @@ export function twoNumber(nums, target) {
         }
       }
   }
-  return "no integers add up to target";
+  return "[]";
+  // return "no integers add up to target"; //functions should return items of one type.
 }
 
 //EDGE CASES
@@ -141,3 +144,19 @@ export function twoNumber(nums, target) {
 // if (nums[i] + nums[j] !== target) {
 //   return console.log("no integers add up to target");
 //NEVER RETURN A CONSOLE.LOG() JUST RETURN A STRING.
+
+export function threeNumber(nums, target) {
+  if (nums.length === 0) {
+    return "[]";
+  }
+  {
+    for (let i = 0; i < nums.length; i++)
+      for (let j = i + 1; j < nums.length; j++)
+        for (let k = j + 1; k < nums.length; k++) {
+          if (nums[i] + nums[j] + nums[k] === target) {
+            return [i, j, k];
+          }
+        }
+  }
+  return "[]";
+}
