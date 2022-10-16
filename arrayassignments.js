@@ -58,6 +58,7 @@ export function mergeTwoArr(arr1, arr2) {
 }
 
 export function arrAssignments() {
+  let arr0 = [1, 2, 3, 4, 5];
   let arr1 = [1, 3, 5, 22, 33, 44];
   let arr2 = [23, 28, 44, 44, 57, 87, 800, 900, 999];
   let arr3 = [44, 22, 31, 86, 42, 100];
@@ -69,11 +70,10 @@ export function arrAssignments() {
   arrSort(arr4, true);
   console.log(`sortedArr3=${arr3}`);
   console.log(`sortedArr4=${arr4}`);
-  // twoNumber(arr2, 88);
-  // console.log(`twoNumber of (arr2)=${twoNumber(arr2, 923)}`);
-  let nums = arr2;
+
+  let nums = arr0;
   console.log("let nums = arr2");
-  console.log(`twoNumber of arr2 - ${twoNumber(nums, 923)}`);
+  console.log(`twoNumber of arr2 - ${twoNumber(nums, 5)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
 }
 
@@ -110,21 +110,34 @@ export function arrSort(arr1, doReverse) {
 }
 
 export function twoNumber(nums, target) {
-  for (let i = 0; i < nums.length; i++)
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
-        return [i, j];
+  if (nums.length === 0) {
+    return "There are no integers to add";
+  }
+  {
+    for (let i = 0; i < nums.length; i++)
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[i] + nums[j] === target) {
+          return [i, j];
+        }
       }
-    }
+  }
+  return "no integers add up to target";
 }
 
-// //// TwoNumber ////
+//EDGE CASES
+//arr = []
+//If nums[i] + nums[j] !== target
+//
 // export function twoNumber(nums, target) {
-//   for (let i = 0; i < nums.length; i++) {
+//   let twoSum = [];
+//   for (let i = 0; i < nums.length; i++)
 //     for (let j = i + 1; j < nums.length; j++) {
 //       if (nums[i] + nums[j] === target) {
 //         return [i, j];
 //       }
 //     }
-//   }
 // }
+///////DOES NOT WORK BECAUSE IT IS RETURNING THAT THE FIRST ITERATION OF THE LOOP !== TARGET THEREFORE CONSOLE LOGS IT.
+// if (nums[i] + nums[j] !== target) {
+//   return console.log("no integers add up to target");
+//NEVER RETURN A CONSOLE.LOG() JUST RETURN A STRING.
