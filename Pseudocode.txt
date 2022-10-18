@@ -1,3 +1,13 @@
+Computational Complexity  aka O-notation
+
+    O(1)- constant time
+    O(lgN) - logarithmic time(N)   - linear time
+    O(NlgN) - ??
+    O(N^2) - quadratic time
+    O(N^3) - cubic time
+    O(N^c) - polymonial time
+    O(2^N) - exponential time
+
 
 Problem 1: Sort an array
     •You are given an Array with 10 positive, unique, integers. Sort the array indexing from lowest to highest. 
@@ -686,3 +696,55 @@ Problem 5.  Merge Two Sorted Arrays
             
             */ Work on problem 1 or problem 2 in JavaScript */ 
             https://www.freecodecamp.org/news/javascript-for-loops/
+
+
+Problem 6. threeNumber
+
+    Given an array of integers NUM and an integer TAR, return indices of the three numbers such that they add up to TAR.
+
+    You may assume that the array would have exactly one solution, and you may not use the same array element twice.
+
+    written in a for loop:
+
+    let nums = [1, 4, 8, 3, 7, 12] target = 11
+    returns = [0, 1, 4]
+
+    for (let i = 0; i < nums.length; i++ ) {
+        for (let j = i + 1; j < nums.length; j++)
+            for (let k = j + 1; k < nums.length; k++)
+            if (nums[i] + nums[j] + nums[k] === target) {
+            return [i, j, k];
+          }
+    }
+
+
+Problem 7. Determine Array length
+
+    Create a function that determines the size of an array without using the .length method
+
+    function getLength(arr)
+
+    Examples
+    arr1 = [1,2];  // returns 2
+    arr2 = []; // returns 0
+
+    We want to set a variable called length to 0 and loop through the index (i) of the array and increment length each iteration. length++. return length outside the loop. 
+
+
+Problem 8. Remove Duplicate elements in an array
+
+    Given an array of numbers, returns a new array that has the same contents as the first array with duplicate values removed
+
+    function removeDups(arr)
+
+    arr1 = [3, 1, 2, 1, 5]; // returns [3, 1, 2, 1];  // 1 was repeated, so it removed the duplicate 1
+
+    1. Do we understand the problem. Yes. 
+    2. Are there any edge cases? Not that I can think of other than if [] === 0 return an empty array, which I don't think is much of an edge case. 
+    3. Do it in english:
+    copy arr1 elements to arr2 starting at index0 to end 
+    if arr1 element 2 = arr1 element 1 do NOT move to the next element in arr1. 
+    if arr1 element 2 != arr1 element 1 copy arr1 element2 to arr2[next available element]
+    
+    
+    In both problems, determine it’s computational complexity - O - notation    

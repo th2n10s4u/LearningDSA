@@ -75,6 +75,7 @@ export function arrAssignments() {
   console.log("let nums = arr2");
   console.log(`twoNumber of arr2 = ${twoNumber(nums, 50)}`);
   console.log(`threeNumber of arr0 = ${threeNumber(nums, 10)}`);
+  console.log(`getLength of arr2 = ${getLength(arr2)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
 }
 
@@ -160,3 +161,15 @@ export function threeNumber(nums, target) {
   }
   return "[]";
 }
+
+/// Find the length of an array without the .length method.
+
+export function getLength(arr) {
+  let length = 0;
+  for (let i of arr) {
+    length++;
+  }
+  return length;
+}
+/// My guess is getLength = O(n) because it takes 1 input?
+///
