@@ -205,22 +205,3 @@ export function numExists(arr, target) {
 ///////////////////////////////////////////////////////////
 ///////////////Gave up on remove duplicates////////////////
 ///////////////////////////////////////////////////////////
-////////////////////HERE IS THE ANSWER/////////////////////
-function makeItUnique(array) {
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    let exists = false;
-    for (let j = 0; j < result.length; j++) {
-      if (array[i] === result[j]) {
-        exists = true;
-        break;
-      }
-    }
-    if (!exists) {
-      result.push(array[i]);
-    }
-  }
-  return result;
-}
-/////////////OR BETTER YET!!!//////////////////
-let removedDuplicates = (removeDups) => [...new Set(removeDups)];
