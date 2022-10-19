@@ -1,5 +1,5 @@
 export function mergeTwoArr(arr1, arr2) {
-  var mergedArr = [];
+  let mergedArr = [];
 
   //Edge Case: both arrays are empty
   if (arr1.length == 0 && arr2.length == 0) {
@@ -63,6 +63,7 @@ export function arrAssignments() {
   let arr2 = [23, 28, 44, 44, 57, 87, 800, 900, 999];
   let arr3 = [44, 22, 31, 86, 42, 100];
   let arr4 = [132, 5, 17, 2, 37, 284];
+  let duplicateArr = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
   let arrEmpty = [];
   let mergeArr = mergeTwoArr(arr1, arr2);
   console.log(mergeArr);
@@ -78,6 +79,7 @@ export function arrAssignments() {
   console.log(retarr0);
   console.log(`threeNumber of arr0 = ${threeNumber(nums, 10)}`);
   console.log(`getLength of arr2 = ${getLength(arr2)}`);
+  console.log(`removeDups of duplicateArr = ${removeDups(duplicateArr)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
 }
 
@@ -176,34 +178,49 @@ export function getLength(arr) {
 }
 /// My guess is getLength = O(n) because it takes 1 input?
 ///
+
 /// Remove Duplicate elements in a new array
-testArr = [14, 22, 22, 42, 14, 3, 14, 1, 12];
-copyWithoutDups = [];
-export function removeDups(arr) {
- for (let i = 0; i < arr.length; i++)
- for (let j = i + 1;  < arr.length; j--)
- if (arr[j])
-  
 
-}
-
-
-
-// arr1 = [3, 3, 1, 2, 1, 5];
-
-// export function isTargetArr(arr, target) {
+// export function numExists(arr, target) {
 //   for (let val of arr) {
-//     if (val === target) return true;
+//       if (val === target)
+//       val++; // check the next index
 //   }
-//   return false;
+//   return arr[arr.length];
 // }
 
+export function removeDups(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    numExists;
+  }
+}
 
 export function numExists(arr, target) {
+  let noDupes = [];
   for (let val of arr) {
-      if (val === target)
-      val++; // check the next index
+    if (val === target) break;
   }
-  return arr[val];
+  return noDupes.push(arr[val]);
 }
-  
+///////////////////////////////////////////////////////////
+///////////////Gave up on remove duplicates////////////////
+///////////////////////////////////////////////////////////
+////////////////////HERE IS THE ANSWER/////////////////////
+function makeItUnique(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let exists = false;
+    for (let j = 0; j < result.length; j++) {
+      if (array[i] === result[j]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
+/////////////OR BETTER YET!!!//////////////////
+let removedDuplicates = (removeDups) => [...new Set(removeDups)];
