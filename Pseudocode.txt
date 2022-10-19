@@ -737,14 +737,33 @@ Problem 8. Remove Duplicate elements in an array
 
     function removeDups(arr)
 
-    arr1 = [3, 1, 2, 1, 5]; // returns [3, 1, 2, 1];  // 1 was repeated, so it removed the duplicate 1
+    arr1 = [3, 3, 1, 2, 1, 5]; // returns [3, 1, 2, 1];  // 1 was repeated, so it removed the duplicate 1
 
     1. Do we understand the problem. Yes. 
     2. Are there any edge cases? Not that I can think of other than if [] === 0 return an empty array, which I don't think is much of an edge case. 
     3. Do it in english:
-    copy arr1 elements to arr2 starting at index0 to end 
-    if arr1 element 2 = arr1 element 1 do NOT move to the next element in arr1. 
+    copy arr1[0] elements to newArr[0] 
+    newArr[3]
+    if arr1[elements] = newArr[elements] move to the next index 
+    
+
+
+
+
+    *if arr1 element 2 = arr1 element 1 do NOT move to the next element in arr1. 
     if arr1 element 2 != arr1 element 1 copy arr1 element2 to arr2[next available element]
     
     
     In both problems, determine it’s computational complexity - O - notation    
+
+
+    arr1 = [3, 3, 1, 2, 1, 5];
+
+    export function isTargetArr(arr, target) {
+    for (let i of arr){
+        target
+        if (arr = target) 
+    return true;
+}
+    else false 
+}

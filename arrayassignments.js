@@ -71,9 +71,11 @@ export function arrAssignments() {
   console.log(`sortedArr3=${arr3}`);
   console.log(`sortedArr4=${arr4}`);
 
-  let nums = arr0;
+  let nums = arrEmpty;
   console.log("let nums = arr2");
   console.log(`twoNumber of arr2 = ${twoNumber(nums, 50)}`);
+  let retarr0 = threeNumber(nums, 10);
+  console.log(retarr0);
   console.log(`threeNumber of arr0 = ${threeNumber(nums, 10)}`);
   console.log(`getLength of arr2 = ${getLength(arr2)}`);
   // let mergeSortedArr = mergeTwoArr(sortedArr3, sortedArr4);
@@ -114,17 +116,18 @@ export function arrSort(arr1, doReverse) {
 export function twoNumber(nums, target) {
   if (nums.length === 0) {
     // return "There are no integers to add"; //functions should return items of one type.
-    return "[]";
+    return [];
   }
   {
     for (let i = 0; i < nums.length; i++)
       for (let j = i + 1; j < nums.length; j++) {
         if (nums[i] + nums[j] === target) {
+          ////   ===	equal value and equal type
           return [i, j];
         }
       }
   }
-  return "[]";
+  return [];
   // return "no integers add up to target"; //functions should return items of one type.
 }
 
@@ -148,7 +151,7 @@ export function twoNumber(nums, target) {
 
 export function threeNumber(nums, target) {
   if (nums.length === 0) {
-    return "[]";
+    return [];
   }
   {
     for (let i = 0; i < nums.length; i++)
@@ -159,17 +162,48 @@ export function threeNumber(nums, target) {
           }
         }
   }
-  return "[]";
+  return [];
 }
 
 /// Find the length of an array without the .length method.
 
 export function getLength(arr) {
   let length = 0;
-  for (let i of arr) {
+  for (let x of arr) {
     length++;
   }
   return length;
 }
 /// My guess is getLength = O(n) because it takes 1 input?
 ///
+/// Remove Duplicate elements in a new array
+testArr = [14, 22, 22, 42, 14, 3, 14, 1, 12];
+copyWithoutDups = [];
+export function removeDups(arr) {
+ for (let i = 0; i < arr.length; i++)
+ for (let j = i + 1;  < arr.length; j--)
+ if (arr[j])
+  
+
+}
+
+
+
+// arr1 = [3, 3, 1, 2, 1, 5];
+
+// export function isTargetArr(arr, target) {
+//   for (let val of arr) {
+//     if (val === target) return true;
+//   }
+//   return false;
+// }
+
+
+export function numExists(arr, target) {
+  for (let val of arr) {
+      if (val === target)
+      val++; // check the next index
+  }
+  return arr[val];
+}
+  
