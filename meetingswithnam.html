@@ -1,0 +1,68 @@
+October 21 2022 Meeting with Nam and Ramesh going over JS.
+
+<!-- This portion was on coderpad.io -->
+// 1. create a new string // 2. iterate through a string // 3. append to string
+each character capitalized // you're given a string. Create a function that
+prints out every character in the string // "".toUpperCase() => capitalizes the
+string // "tim".toUpperCase() => TIM // let str = "" // str += "a" // str ===
+"a"
+
+<!-- function printCharacters(string) {
+  let newString:string = ""
+
+  for (let i = 0; i < string.length; i++) {
+    const character: string = string[i];
+    const capital: string = character.toUpperCase();
+    // append capital to end of. newString capital
+    newString += capital;
+  }
+
+  return newString
+}
+
+printCharacters('abc');
+ -->
+
+<!-- codingsandbox.com -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <!-- want an input for a user to type in an email -->
+    <!-- save button -->
+    <!-- when save button is clicked, console.log('hello world') -->
+
+    <input type="text" id="inputEmail" />
+    <button id="saveButton">Save</button>
+
+    <div id="app"></div>
+
+    <div></div>
+    <script>
+      // <input element>.value
+      // valid email: it has an "@"
+      // if its a valid email: console.log(true)
+      // it its not a valid: console.log(false)
+      let emailInput = document.getElementById("inputEmail");
+      let saveButton = document.getElementById("saveButton");
+
+      function clicked() {
+        const string = emailInput.value;
+        for (let i = 0; i < string.length; i++) {
+          let character = string[i];
+          if (character === "@") {
+            console.log("true");
+          }
+        }
+
+        console.log(emailInput.value);
+      }
+
+      saveButton.addEventListener("click", clicked);
+    </script>
+  </body>
+</html>
