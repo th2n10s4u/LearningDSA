@@ -1,12 +1,12 @@
-October 21 2022 Meeting with Nam and Ramesh going over JS.
+<!-- October 21 2022 Meeting with Nam and Ramesh going over JS. -->
 
 <!-- This portion was on coderpad.io -->
-// 1. create a new string // 2. iterate through a string // 3. append to string
+<!--// 1. create a new string // 2. iterate through a string // 3. append to string
 each character capitalized // you're given a string. Create a function that
 prints out every character in the string // "".toUpperCase() => capitalizes the
 string // "tim".toUpperCase() => TIM // let str = "" // str += "a" // str ===
 "a"
-
+-->
 <!-- function printCharacters(string) {
   let newString:string = ""
 
@@ -50,17 +50,31 @@ printCharacters('abc');
       let emailInput = document.getElementById("inputEmail");
       let saveButton = document.getElementById("saveButton");
 
-      function clicked() {
+      //   function clicked() {
+      //     const string = emailInput.value;
+      //     for (let i = 0; i < string.length; i++) {
+      //       let character = string[i];
+      //       if (character === "@") {
+      //         console.log("true");
+      //       }
+      //     }
+
+      //     console.log(emailInput.value);
+      //   }
+
+      const clicked = () => {
         const string = emailInput.value;
         for (let i = 0; i < string.length; i++) {
           let character = string[i];
           if (character === "@") {
-            console.log("true");
+            return console.log("true");
           }
+          console.log(
+            emailInput.value + " please only enter an email address!"
+          );
         }
-
-        console.log(emailInput.value);
-      }
+        // console.log(emailInput.value);
+      };
 
       saveButton.addEventListener("click", clicked);
     </script>
