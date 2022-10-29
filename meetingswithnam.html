@@ -69,14 +69,139 @@ printCharacters('abc');
           if (character === "@") {
             return console.log("true");
           }
-          console.log(
-            emailInput.value + " please only enter an email address!"
-          );
+          console.log(`${string} please only enter an email address!`);
         }
         // console.log(emailInput.value);
       };
 
       saveButton.addEventListener("click", clicked);
+    </script>
+  </body>
+</html>
+
+<!-- October 28 2022 Meeting with Nam and Ramesh going over JS. -->
+
+const isValid // boolean const userCount //number const firstName // string
+const firstNames // array of strings const user // object const users // array
+of object const getUserCount // fn => number const getUsers // fn => array of
+objects const appendH1ToDiv // fn that appens an h1 to a div const
+renderSomething // fn => renders something let addition = (num1, num2) => {
+return num1 + num2 } function addTwoNum(num1, num2) { return num1 + num2; }
+function stringFunction(firstName, lastName) { return firstName + " " +
+lastName; } function checkPasswordLength(passWord) { if (passWord.length >= 8) {
+return true; } return false; } let isTimsPasswordGood =
+checkPasswordLength("Hughes") // false /**********************************/
+const tim = { firstName: "Tim", lastName: "Hughes", age: 33, hasChild: true,
+printHelloWorld: (string) => { console.log("hello world" + string); } }
+tim.printHelloWorld(" its a wonderful day");
+
+<!-- codesandbox form submission -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div>
+      <input placeholder="First name" type="text" id="firstName" />
+    </div>
+    <div>
+      <input placeholder="Last name" type="text" id="lastName" />
+    </div>
+    <div>
+      <input placeholder="Age" type="text" id="age" />
+    </div>
+    <div>
+      <input placeholder="Email" type="text" id="email" />
+    </div>
+    <div>
+      <input placeholder="Password" type="text" id="passWord" />
+    </div>
+    <div>
+      <button id="saveButton">Save</button>
+    </div>
+
+    <script>
+      let firstNameInput = document.querySelector("#firstName");
+      let lastNameInput = document.querySelector("#lastName");
+      let ageInput = document.querySelector("#age");
+      let emailInput = document.querySelector("#email");
+      let passWordInput = document.querySelector("#passWord");
+      let saveButton = document.querySelector("#saveButton");
+
+      // {} key, value pairs key:value
+
+      const clicked = () => {
+        // create an object
+        let user = {
+          firstName: firstNameInput.value,
+          lastName: lastNameInput.value,
+          age: ageInput.value,
+          email: emailInput.value,
+          passWord: passWordInput.value,
+          // method to determine whether the user is over 18. console.log that
+          isOver18: function () {
+            if (this.age >= 18) {
+              console.log("You may enter");
+              return;
+            }
+            console.log("You are not of age to be here");
+          },
+        };
+        user.isOver18();
+
+        // logFullName: function () {
+        //   console.log(this.firstName + " " + this.lastName);
+        // }
+        // user.logFullName();
+
+        // console.log(
+        //   firstNameInput.value +
+        //     lastNameInput.value +
+        //     ageInput.value +
+        //     emailInput.value +
+        //     saveButton.value
+        // );
+      };
+
+      saveButton.addEventListener("click", clicked);
+
+      // let emailInput = document.querySelector("#inputEmail");
+      // let saveButton = document.querySelector("#saveButton");
+      // const body = document.querySelector("body");
+
+      // function getIsEmailValid(email) {
+      //   for (let i = 0; i < email.length; i++) {
+      //     let character = email[i];
+      //     if (character === "@") {
+      //       return [true, "All good"];
+      //     }
+      //   }
+
+      //   return [false, "Missing an @"];
+      // }
+
+      // function renderIsEmailValidMessage(isEmailValidArg) {
+      //   if (isEmailValidArg) {
+      //     const allGoodH1 = document.createElement("h1");
+      //     allGoodH1.innerHTML = "All good!";
+      //     body.appendChild(allGoodH1);
+      //   } else {
+      //     const notAllGoodH1 = document.createElement("h1");
+      //     notAllGoodH1.innerHTML = "Email is invalid";
+      //     body.appendChild(notAllGoodH1);
+      //   }
+      // }
+
+      // function clicked() {
+      //   const email = emailInput.value;
+      //   const isEmailValid = getIsEmailValid(email);
+      //   renderIsEmailValidMessage(isEmailValid);
+      // }
+      // saveButton.addEventListener("click", clicked);
     </script>
   </body>
 </html>
