@@ -8,8 +8,11 @@ Computational Complexity  aka O-notation
     O(N^c) - polymonial time
     O(2^N) - exponential time
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 1: Sort an array
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     •You are given an Array with 10 positive, unique, integers. Sort the array indexing from lowest to highest. 
 
     We will compare integers until the lowest integer is found, starting with index 0. When we iterate the array and have the the lowest integer we will add it to Array B and make it negative Array A to prevent it from being selected again. 
@@ -136,8 +139,11 @@ Problem 1: Sort an array
     A=    [10, 20, 38, 4, 15, 55, 1, 33, 45, 50]
     Index=   0   1   2  3   4   5  6  7    8  9 
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 2: Sort an array reversed
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     •You are given an array of positive, unique integers. Sort the array indexing largest to smallest
 
     A=      [25, 47, 86, 22, 56, 99, 20, 52, 31, 88]
@@ -164,8 +170,11 @@ Problem 2: Sort an array reversed
     Apply index 5 from A[] to index 0 of B[], make index 5 in A[] negative.
     repeat.  
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 3: Sort an array  without creating another array
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     •You are given an array of positive, unique integers. Sort the array indexing smallest to largest without creating a second array. 
 
 
@@ -359,9 +368,11 @@ Problem 3: Sort an array  without creating another array
         compare index 0 to index 1, index 1 is larger than index 0, swap index 0 and index 1
         compare index 0 to index 2
 
- 
+ //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 4. Two Number
-    
+ //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////   
     Given an array of integers NUM and an integer TAR, return indices of the two numbers such that they add up to TAR.
 
     You may assume that the array would have exactly one solution, and you may not use the same array element twice.
@@ -523,9 +534,11 @@ Problem 4. Two Number
                                                 0          2                   35        -23            true
                                                                                                             output: [0, 2]
                                
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 5.  Merge Two Sorted Arrays 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     You are given two sorted arrays array1 and array2.
         Each array contains integers.
        The sizes of the two arrays may be different.
@@ -697,9 +710,11 @@ Problem 5.  Merge Two Sorted Arrays
             */ Work on problem 1 or problem 2 in JavaScript */ 
             https://www.freecodecamp.org/news/javascript-for-loops/
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 6. threeNumber
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     Given an array of integers NUM and an integer TAR, return indices of the three numbers such that they add up to TAR.
 
     You may assume that the array would have exactly one solution, and you may not use the same array element twice.
@@ -717,9 +732,11 @@ Problem 6. threeNumber
           }
     }
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 7. Determine Array length
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     Create a function that determines the size of an array without using the .length method
 
     function getLength(arr)
@@ -730,9 +747,11 @@ Problem 7. Determine Array length
 
     We want to set a variable called length to 0 and loop through the index (i) of the array and increment length each iteration. length++. return length outside the loop. 
 
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 Problem 8. Remove Duplicate elements in an array
-
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     Given an array of numbers, returns a new array that has the same contents as the first array with duplicate values removed
 
     function removeDups(arr)

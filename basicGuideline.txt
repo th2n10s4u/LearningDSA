@@ -7,15 +7,15 @@
 //    you can next // comments // like // this
 // 3. Declarations 
 //    a. always declare your variables using let or const
-//          if a variable is con
+//          if a variable is constant
 //                  while (!done) {
 //                     foo = a;
 //                     if (!foo) {
 //                        b = true;
 //                        for (i=0; i<2; i++) {
 //                           a[i] = b;
-//                           b = !b;stant - use the const declaration; const means 
-//          that you cannot assign that variable to another value
+//                           b = !b; - use the const declaration; 
+//         const means that you cannot assign that variable to another value
 //          For example: 
 //             const arr1 = [1, 3, 5];
 //             arr1.push(7);   // is legal - we changed the contents of arr1, but not arr1 itself;
@@ -23,7 +23,7 @@
 //             arr1 = [2, 4, 6]; // is ILLEGAL - we changed arr1; arr1 no longer points to the same
 //                                  memory location as before
 //    b. declare your variables in the most local scope as possible and before its first use
-//             For example: where should you declare 'done', 'a', 'b', 'i'?
+//             For example: where should you declare 'done', 'a', 'b', 'i'?                                     // I don't understand this question but I would guess within the function test() { done = b & a;} not outside of the function test's scope.
 //               function test() {
 //                     }
 //                     done = b & a;

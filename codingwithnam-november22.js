@@ -243,3 +243,279 @@ console.log(noAdjacentDuplicates("abb"));
 // console.log(ultimateValidator("Abcdefg!!")) //doesn't have number
 // console.log(ultimateValidator("ABCDEFG!1")) //doesn't have lowercase
 // console.log(ultimateValidator("abcdefg!1")) //doesn't have uppercase
+/*<===========================================================================>
+<=============================================================================>
+<=======================ULTIMATE VALIDATOR COMPLETE!==========================>
+<=============================================================================>
+<===========================================================================>*/
+
+/*
+const vs let vs var 
+variable data types: numbers, string, bools, arrays, objects
+object: 
+key, value data structure
+
+conditionals: if/else 
+for loops
+while loops 
+
+functions 
+optionally take input 
+does something/anything 
+optionally outputs something 
+
+const users = [
+  {
+    firstName: string 
+    lastName: string 
+    email: string
+    age: number 
+  }, {
+    firstName: string 
+    lastName: string 
+    email: string
+    age: number 
+  }
+]
+
+list of users: 
+return the count of how many users have firstName shorter than 5 letter. 
+return the count of how many users have lastName longer than 5 letter. 
+return the count of how many users have email ending with @gmail.com . 
+return the count of how many users are older than 21
+
+*/
+
+const users = [
+  {
+    firstName: "Zac",
+    lastName: "Montgomery",
+    email: "anemail@gmail.com",
+    age: 33,
+  },
+
+  {
+    firstName: "Anthony",
+    lastName: "Zee",
+    email: "anotheremail@yahoo.com",
+    age: 22,
+  },
+
+  {
+    firstName: "Br",
+    lastName: "Buck",
+    email: "athirdemail@gmail.com",
+    age: 22,
+  },
+  {
+    firstName: "Tim",
+    lastName: "Triston",
+    email: "numberfour@gmail.com",
+    age: 22,
+  },
+  {
+    firstName: "Phillip",
+    lastName: "Hambelton",
+    email: "thisis5@hotmail.com",
+    age: 22,
+  },
+  {
+    firstName: "billy",
+    lastName: "Bobcat",
+    email: "finallylastone@gmail.com",
+    age: 22,
+  },
+];
+
+//=========================================>
+//==========First Name Less Than 5=========>
+//=========================================>
+
+// for loop method
+function firstNameShorterThan5(users) {
+  let count = 0;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].firstName.length < 5) {
+      count += 1;
+    }
+  }
+  return `There are ${count} first names shorter than 5`;
+}
+
+/*
+// .filter() method
+function firstNameShorterThan5(users) {
+  const filteredUsers = users.filter(({firstName}) => firstName.length < 5);
+  return `There are ${filteredUsers.length} first names shorter than 5`;
+}
+*/
+
+/* 
+let firstNameMap = users.map(fName => fName.firstName);
+//firstnNameMap creates an array of firstNames 
+let count = 0; 
+//sets the count to 0
+
+function firstNameShorterThan5(arr) { 
+  // creates a function that is supposed to take in the arr firstNameMap
+  for (let i = 0; i < firstNameMap.length; i++) {
+    // loops through firstNameMap.length
+    if (firstNameMap[i].length < 5)  {
+      // if the elements in the array are less than 5
+      count = count + 1; 
+      // add 1 to count
+    }
+  } 
+  // return count outside the scope of the loop
+  return `There are ${count} firstName's less than 5`;
+}
+
+// console.log(firstNameShorterThan5(firstNameMap));
+*/
+
+//=========================================>
+//==========Last Name More Than 5==========>
+//=========================================>
+
+// for loop method
+function lastNameLongerThan5(users) {
+  let count = 0;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].lastName.length > 5) {
+      count += 1;
+    }
+  }
+  return `There are ${count} last names longer than 5`;
+}
+
+/*
+// .filter() method
+function lastNameLongerThan5(users) {
+  const usersFiltered = users.filter(({ lastName }) => lastName.length >= 5);
+  return `There are ${usersFiltered.length} last names longer than 5`;
+}
+*/
+
+/*let lastNameMap = users.map(lName => lName.lastName);
+// console.log(lastNameMap)
+
+function lastNameLongerThan5(arr) {
+let count = 0 
+for (let i = 0; i < lastNameMap.length; i++) {
+if (lastNameMap[i].length > 5) { 
+  count += 1; 
+}
+}
+return `There are ${count} last names's greater than 5`;
+}
+// console.log(lastNameLongerThan5(lastNameMap));
+*/
+
+//=========================================>
+//========Count of gmail accounts==========>
+//=========================================>
+
+//for loop method
+function emailIsGmail(users) {
+  let count = 0;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].email.endsWith("gmail.com")) {
+      count += 1;
+    }
+  }
+  return `There are ${count} gmail accounts`;
+}
+
+/*
+// .filter() method
+function emailIsGmail(users) {
+  const emailFilter = users.filter(({email}) => email.endsWith("gmail.com"));
+  return `There are ${emailFilter.length} gmail accounts`;
+}
+*/
+
+/*
+// console.log(emailMap);
+
+function emailIsGmail(arr) {
+  
+  let count = 0; 
+  for (let i = 0; i < arr.length; i++) {
+    if (emailMap[i].includes("gmail.com")) {
+      count += 1; 
+    }
+  }
+  return `There are ${count} gmail accounts`
+}
+// console.log(emailIsGmail(emailMap));
+*/
+//=========================================>
+//=============Older than 21===============>
+//=========================================>
+
+//for loop method
+function olderThan21(users) {
+  let count = 0;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].age >= 21) {
+      count += 1;
+    }
+  }
+  return `There are ${count} people over the age of 21`;
+}
+
+/*
+// .filter() method
+function olderThan21(users) {
+  const usersThatAreOlder = users.filter(({ age }) => age >= 21);
+  return `There are ${usersThatAreOlder.length} over the age of 21`;
+};
+*/
+
+// const ageMap = users.map(ageOfIndividual => ageOfIndividual.age);
+// // console.log(ageMap);
+
+// function olderThan21(arr) {
+//   let count = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (ageMap[i] > 21) {
+//       count += 1;
+//     }
+//   }
+//   return `There are ${count} who are 21 or older`
+// }
+// // console.log(olderThan21(ageMap));
+
+function ultimateObjectValidator(arr) {
+  console.log(firstNameShorterThan5(users));
+  console.log(lastNameLongerThan5(users));
+  console.log(emailIsGmail(users));
+  console.log(olderThan21(users));
+}
+console.log(ultimateObjectValidator(users));
+
+//=========================================>
+//========Create Ends With function========>
+//=========================================>
+
+/**
+ * Create a function
+ * the function takes a String
+ * takes in a phrase
+ * checks the phrases length
+ * compares the phrase to the final index of the string by looping through the array backwards
+ */
+
+//=========================================>
+//========Print the index "@" is located===>
+//=========================================>
+
+function wheresAt(emailAddress) {
+  for (let i = 0; i < emailAddress.length; i++) {
+    if (emailAddress[i] === "@") {
+      return `The index is ${i}`;
+    }
+  }
+  return false;
+}
