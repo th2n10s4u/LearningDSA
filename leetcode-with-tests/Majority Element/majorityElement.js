@@ -1,3 +1,31 @@
+// Brute Force
+function mostElements(arr) {
+  let half = arr.length / 2;
+
+  for (let i = 0; i < arr.length; i++) {
+    let counter = 1;
+    let stored = arr[i];
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        counter++;
+        stored = arr[i];
+      }
+    }
+    if (counter > half) {
+      return stored;
+    }
+  }
+}
+let nums1 = [3, 2, 3];
+let nums2 = [2, 2, 1, 1, 1, 2, 2];
+let nums3 = [1];
+console.log(mostElements(nums1));
+console.log(mostElements(nums2));
+console.log(mostElements(nums3));
+
+/////////////////
+
+// Solved using map
 function majorityElement(nums) {
   let countsMap = new Map();
 
